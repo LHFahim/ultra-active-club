@@ -1,8 +1,17 @@
 import React from 'react';
+import { useState } from 'react';
+import BreakBtn from '../BreakBtn/BreakBtn';
 import image from './img.jpg';
 
 const Profile = ({ exerciseTime }) => {
-  console.log(exerciseTime);
+  const [breakTime, setBreakTime] = useState(0);
+  const breakTimeArray = [10, 20, 30, 40, 50];
+
+  const handleBreakBtnClick = selectedBreakTime => {
+    // console.log(selectedBreakTime);
+    setBreakTime(selectedBreakTime);
+  };
+
   return (
     <div>
       <div className="flex space-x-5 mt-10">
@@ -33,21 +42,13 @@ const Profile = ({ exerciseTime }) => {
       <div className="mt-8">
         <h4 className="text-left mb-1 text-zinc-600">Add a break</h4>
         <div className="flex space-x-5 bg-slate-200 rounded-2xl p-2">
-          <button className=" p-2 rounded-2xl text-white bg-purple-600">
-            10s
-          </button>
-          <button className=" p-2 rounded-2xl text-white bg-purple-600">
-            20s
-          </button>
-          <button className=" p-2 rounded-2xl text-white bg-purple-600">
-            30s
-          </button>
-          <button className=" p-2 rounded-2xl text-white bg-purple-600">
-            40s
-          </button>
-          <button className=" p-2 rounded-2xl text-white bg-purple-600">
-            50s
-          </button>
+          {breakTimeArray.map(time => (
+            <BreakBtn
+              key={time}
+              time={time}
+              handleBreakBtnClick={handleBreakBtnClick}
+            />
+          ))}
         </div>
       </div>
 
@@ -60,7 +61,7 @@ const Profile = ({ exerciseTime }) => {
         </div>
         <div className="flex justify-between bg-slate-200 p-2 rounded-xl mt-5">
           <h4>Break time</h4>
-          <p>20 seconds</p>
+          <p>{breakTime} mins</p>
         </div>
       </div>
 
