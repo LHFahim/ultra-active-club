@@ -9,6 +9,7 @@ import Profile from '../Profile/Profile';
 
 const Dashboard = () => {
   const [sports, setSports] = useState([]);
+  const [exerciseTime, setExerciseTime] = useState(0);
 
   useEffect(() => {
     fetch('sports.json')
@@ -16,9 +17,8 @@ const Dashboard = () => {
       .then(data => setSports(data));
   }, []);
 
-  const handleBtnClick = sport => {
-    console.log('clicked ');
-    console.log(sport);
+  const handleBtnClick = selectedSport => {
+    setExerciseTime(exerciseTime + selectedSport.required_time);
   };
 
   return (
@@ -42,7 +42,7 @@ const Dashboard = () => {
       </section>
 
       <section>
-        <Profile />
+        <Profile exerciseTime={exerciseTime} />
       </section>
     </div>
   );

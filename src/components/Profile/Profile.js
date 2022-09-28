@@ -1,7 +1,8 @@
-import React from "react";
-import image from "./img.jpg";
+import React from 'react';
+import image from './img.jpg';
 
-const Profile = () => {
+const Profile = ({ exerciseTime }) => {
+  console.log(exerciseTime);
   return (
     <div>
       <div className="flex space-x-5 mt-10">
@@ -55,7 +56,7 @@ const Profile = () => {
         <h4 className="mb-2">Exercise Details</h4>
         <div className="flex justify-between bg-slate-200 p-2 rounded-xl">
           <h4>Exercise time</h4>
-          <p>200 seconds</p>
+          <p>{exerciseTime} mins</p>
         </div>
         <div className="flex justify-between bg-slate-200 p-2 rounded-xl mt-5">
           <h4>Break time</h4>
