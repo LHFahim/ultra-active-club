@@ -16,7 +16,10 @@ const Dashboard = () => {
       .then(data => setSports(data));
   }, []);
 
-  // console.log(sports);
+  const handleBtnClick = sport => {
+    console.log('clicked ');
+    console.log(sport);
+  };
 
   return (
     <div className="flex">
@@ -29,7 +32,11 @@ const Dashboard = () => {
         {/* cards */}
         <div className="w-8/12 mx-auto grid grid-cols-3 gap-8">
           {sports.map(sport => (
-            <Card key={sport.id} sport={sport} />
+            <Card
+              key={sport.id}
+              sport={sport}
+              handleBtnClick={handleBtnClick}
+            />
           ))}
         </div>
       </section>
