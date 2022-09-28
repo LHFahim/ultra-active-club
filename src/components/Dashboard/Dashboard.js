@@ -2,11 +2,14 @@ import React from "react";
 import Card from "../Card/Card";
 import Navigation from "../Navigation/Navigation";
 import Profile from "../Profile/Profile";
+import sports from "./sports.json";
+// import sports from "sports.json";
 
 const Dashboard = () => {
+  console.log(sports);
   return (
     <div className="flex">
-      <section className="w-10/12">
+      <section className="w-9/12">
         <div className="w-8/12 mx-auto mb-10">
           <Navigation />
           <h3 className="text-left text-zinc-500">Select Today's Exercises</h3>
