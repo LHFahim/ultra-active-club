@@ -5,8 +5,6 @@ import Card from '../Card/Card';
 import Navigation from '../Navigation/Navigation';
 import Profile from '../Profile/Profile';
 
-// import sports from "sports.json";
-
 const Dashboard = () => {
   const [sports, setSports] = useState([]);
   const [exerciseTime, setExerciseTime] = useState(0);
@@ -17,7 +15,7 @@ const Dashboard = () => {
       .then(data => setSports(data));
   }, []);
 
-  const handleBtnClick = selectedSport => {
+  const handleBtnClick = (selectedSport, flag) => {
     setExerciseTime(exerciseTime + selectedSport.required_time);
   };
 
@@ -41,7 +39,7 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <section>
+      <section className="">
         <Profile exerciseTime={exerciseTime} />
       </section>
     </div>
