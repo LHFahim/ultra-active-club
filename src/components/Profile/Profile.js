@@ -51,7 +51,21 @@ const Profile = () => {
       </div>
 
       {/* exercise details */}
-      <div>Exercise Details</div>
+      <div className="mt-8 text-left">
+        <h4 className="mb-2">Exercise Details</h4>
+        <div className="flex justify-between bg-slate-200 p-2 rounded-xl">
+          <h4>Exercise time</h4>
+          <p>200 seconds</p>
+        </div>
+        <div className="flex justify-between bg-slate-200 p-2 rounded-xl mt-5">
+          <h4>Break time</h4>
+          <p>20 seconds</p>
+        </div>
+      </div>
+
+      <button className="bg-purple-500 py-2 w-full mt-5 rounded-xl text-white font-bold">
+        Activity Completed
+      </button>
     </div>
   );
 };
