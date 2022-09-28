@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
-const Card = () => {
+const Card = ({ sport }) => {
+  const { img, name, required_time } = sport;
+  console.log(img, name, required_time);
+
   return (
     <div className="shadow-2xl bg-slate-200 p-2 rounded">
       <div>
         <div className="p-5">
-          <img
-            src="https://i.pinimg.com/originals/9e/f6/43/9ef6436039e36756cb65019cb8135c0b.jpg"
-            alt=""
-          />
+          <img src={img} alt="" />
         </div>
         <div className="space-y-2">
-          <h4>Dumble</h4>
+          <h4>{name}</h4>
           <p>
-            <small>Time required: 30s</small>
+            <small>Time required: {required_time} mins</small>
           </p>
           <button className="rounded-xl w-full bg-zinc-700 py-2 px-5 text-white">
             Add to list
