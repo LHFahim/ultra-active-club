@@ -8,10 +8,10 @@ const Card = ({ sport, handleBtnClick, msg }) => {
     <div className="shadow-2xl bg-slate-200 p-2 rounded">
       <div>
         <div className="p-5">
-          <img src={img} alt="" />
+          <img className="hover:scale-125 duration-200" src={img} alt="" />
         </div>
         <div className="space-y-2">
-          <h4>{name}</h4>
+          <h4 className="text-xl font-semibold">{name}</h4>
           <p>
             <small>Time required: {required_time} mins</small>
           </p>
