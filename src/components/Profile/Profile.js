@@ -13,7 +13,7 @@ const Profile = ({ exerciseTime }) => {
   const breakTimeArray = [10, 20, 30, 40, 50];
 
   const notify = () =>
-    toast('Congratulations!! You have completed your activities.');
+    toast.success('Congratulations!! You have completed your activities.');
 
   const handleBreakBtnClick = selectedBreakTime => {
     setBreakTime(selectedBreakTime);
@@ -93,7 +93,7 @@ const Profile = ({ exerciseTime }) => {
         </button>
         <ToastContainer
           position="top-center"
-          autoClose={10000}
+          autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
