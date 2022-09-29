@@ -5,7 +5,7 @@ import React from 'react';
 const Navigation = () => {
   return (
     <div className="mt-10 mb-6 flex justify-center items-center">
-      <h1 className="inline text-3xl font-black text-purple-500  text-center">
+      <h1 className="inline text-4xl font-black text-zinc-900  text-center">
         Fitness Hub
       </h1>
       <svg

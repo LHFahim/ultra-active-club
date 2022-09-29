@@ -10,7 +10,7 @@ function App() {
       <div className="">
         <Dashboard />
       </div>
-      <div className="my-10 w-10/12 mx-auto shadow-2xl bg-yellow-200 rounded-lg p-5">
+      <div className="mt-20 w-10/12 mx-auto shadow-2xl bg-yellow-200 rounded-lg p-5">
         <ReactWork />
       </div>
       <div className="my-10 w-10/12 mx-auto shadow-2xl bg-yellow-200 rounded-lg p-5">
