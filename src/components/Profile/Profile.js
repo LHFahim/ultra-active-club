@@ -5,12 +5,17 @@ import image from './img.jpg';
 import { addToLocalStorage, getStoredObj } from '../Utilities/dbController';
 import { useEffect } from 'react';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Profile = ({ exerciseTime }) => {
   const [breakTime, setBreakTime] = useState(0);
   const breakTimeArray = [10, 20, 30, 40, 50];
 
+  const notify = () =>
+    toast('Congratulations!! You have completed your activities.');
+
   const handleBreakBtnClick = selectedBreakTime => {
-    // console.log(selectedBreakTime);
     setBreakTime(selectedBreakTime);
     addToLocalStorage(selectedBreakTime);
   };
@@ -80,9 +85,23 @@ const Profile = ({ exerciseTime }) => {
           </div>
         </div>
 
-        <button className="bg-purple-500 py-2 w-full mt-5 rounded-xl text-white font-bold">
+        <button
+          onClick={notify}
+          className="bg-purple-500 py-2 w-full mt-5 rounded-xl text-white font-bold"
+        >
           Activity Completed
         </button>
+        <ToastContainer
+          position="top-center"
+          autoClose={10000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </div>
   );
