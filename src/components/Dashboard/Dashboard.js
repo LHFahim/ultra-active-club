@@ -20,15 +20,17 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex">
-      <section className="w-9/12">
-        <div className="w-8/12 mx-auto mb-10">
+    <div className="flex flex-col md:flex-row">
+      <section className="md:w-9/12">
+        <div className="w-10/12 md:w-8/12 mx-auto mb-10">
           <Navigation />
-          <h3 className="text-left text-zinc-500">Select Today's Exercises</h3>
+          <h3 className="text-left text-lg font-semibold text-zinc-600">
+            Select Today's Exercises
+          </h3>
         </div>
 
         {/* cards */}
-        <div className="w-8/12 mx-auto grid grid-cols-3 gap-8">
+        <div className="w-10/12 md:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {sports.map(sport => (
             <Card
               key={sport.id}
@@ -39,7 +41,7 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <section className="">
+      <section className="w-10/12 mx-auto md:w-3/12 md:flex self-center ">
         <Profile exerciseTime={exerciseTime} />
       </section>
     </div>

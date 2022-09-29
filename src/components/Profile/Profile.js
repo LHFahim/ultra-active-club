@@ -23,12 +23,12 @@ const Profile = ({ exerciseTime }) => {
   }, [breakTime]);
 
   return (
-    <div className="bg-yellow-50 px-10 pb-10 rounded-xl shadow-2xl ">
+    <div className="bg-yellow-100 px-10 pb-10 rounded-xl shadow-2xl ">
       <div>
         <div className="flex space-x-5 mt-10 pt-10">
           <img className="w-14 h-14 rounded-full" src={image} alt="" />
           <div className="text-left">
-            <h3>LH Fahim</h3>
+            <h3 className="text-lg font-semibold">LH Fahim</h3>
             <p>
               <small>Dhaka, Bangladesh</small>
             </p>
@@ -36,22 +36,26 @@ const Profile = ({ exerciseTime }) => {
         </div>
 
         {/* info */}
-        <div className="border flex space-x-10 mt-8 p-2 bg-slate-200 rounded-2xl">
+        <div className=" flex space-x-10 mt-8 p-2 bg-slate-200 rounded-2xl">
           <p>
-            66 KG <br /> weight
+            <span className="font-bold">66 KG</span> <br />
+            weight
           </p>
+
           <p>
-            5'5" <br />
+            <span className="font-bold"> 5'5"</span> <br />
             height
           </p>
           <p>
-            23 years <br /> age
+            <span className="font-bold">23 years</span> <br /> age
           </p>
         </div>
 
         {/* break */}
         <div className="mt-8">
-          <h4 className="text-left mb-1 text-zinc-600">Add a break</h4>
+          <h4 className="text-left text-lg font-medium mb-1 text-zinc-600">
+            Add a break
+          </h4>
           <div className="flex space-x-5 bg-slate-200 rounded-2xl p-2">
             {breakTimeArray.map(time => (
               <BreakBtn
